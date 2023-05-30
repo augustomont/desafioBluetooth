@@ -1,0 +1,63 @@
+﻿@model desafioBluetooth.Models.bluetoothModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Adicionar</h1>
+
+<h4>bluetoothModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Periodo" class="control-label"></label>
+                <input asp-for="Periodo" class="form-control" />
+                <span asp-validation-for="Periodo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MAC" class="control-label"></label>
+                <input asp-for="MAC" class="form-control" />
+                <span asp-validation-for="MAC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MACScan" class="control-label"></label>
+                <input asp-for="MACScan" class="form-control" />
+                <span asp-validation-for="MACScan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MACPaired" class="control-label"></label>
+                <input asp-for="MACPaired" class="form-control" />
+                <span asp-validation-for="MACPaired" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataHoraEvento" class="control-label"></label>
+                <input asp-for="DataHoraEvento" class="form-control" />
+                <span asp-validation-for="DataHoraEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FlagProcess" /> @Html.DisplayNameFor(model => model.FlagProcess)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationUserId" class="control-label"></label>
+                <input asp-for="ApplicationUserId" class="form-control" />
+                <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
